@@ -7,7 +7,7 @@ Pré-requisitos
    java -version
 
 2. Apache Maven: Instale o Maven para gerenciar as dependências e compilar o projeto:
-   sudo apt install maven
+   *sudo apt install maven
    mvn -version
 
 3. MongoDB: Configure o banco de dados MongoDB:
