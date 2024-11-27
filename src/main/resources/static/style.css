@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+#listaEventos, #listaParticipantes, #eventosComParticipantes {
+    margin-top: 20px;
+}
+
+.evento-item, .participante-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Flexbox container for divs */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between columns */
+}
+
+/* Style for each section */
+.container > div {
+    flex: 1 1 calc(33.33% - 20px); /* 3 equal columns */
+    box-sizing: border-box;
+    min-width: 280px; /* Ensure the columns don't get too narrow */
+}
+
+/* Form styling */
+form {
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button:hover {
+    background-color: #45a049;
+}
