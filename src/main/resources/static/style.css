@@ -5,43 +5,48 @@ body {
     padding: 20px;
 }
 
-h1, h2 {
+h1, h2, h3 {
     color: #333;
 }
 
-#listaEventos, #listaParticipantes, #eventosComParticipantes {
+/* Container for all the forms */
+.forms-container {
+    display: flex;
+    flex-wrap: wrap;  /* Allow wrapping if necessary */
+    gap: 40px;
     margin-top: 20px;
 }
 
-.evento-item, .participante-item {
+/* Container for event forms */
+.eventos-container {
+    flex: 1;
+    min-width: 280px;
+    max-width: 500px;
+    padding: 20px;
     background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Flexbox container for divs */
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Space between columns */
+/* Container for participant forms */
+.participantes-container {
+    flex: 1;
+    min-width: 280px;
+    max-width: 500px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Style for each section */
-.container > div {
-    flex: 1 1 calc(33.33% - 20px); /* 3 equal columns */
-    box-sizing: border-box;
-    min-width: 280px; /* Ensure the columns don't get too narrow */
-}
-
-/* Form styling */
+/* Styling for the form sections */
 form {
     margin-bottom: 20px;
 }
 
 input {
     padding: 10px;
-    margin: 5px;
+    margin: 5px 0;
     width: 100%;
     box-sizing: border-box;
 }
@@ -60,23 +65,36 @@ button:hover {
     background-color: #45a049;
 }
 
-.container {
-    display: flex;
-    flex-direction: row; /* Alinha as divs na horizontal */
-    flex-wrap: nowrap; /* Impede que as divs quebrem para novas linhas */
-    overflow-x: auto; /* Adiciona rolagem horizontal, se necessário */
-    gap: 20px; /* Espaço entre as divs */
-    padding: 10px; /* Espaço interno para o container */
-    box-sizing: border-box;
+/* Event and participant list styling */
+#listaEventos, #listaParticipantes, #eventosComParticipantes {
+    margin-top: 20px;
 }
 
-/* Style for each section */
+.evento-item, .participante-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
 .container > div {
-    flex: 0 0 auto; /* Garante que cada div mantenha o seu tamanho e não estique */
-    width: 300px; /* Largura fixa para cada seção */
-    background-color: #fff; /* Fundo branco */
-    border: 1px solid #ddd; /* Borda ao redor */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona leve sombra */
-    padding: 10px; /* Espaçamento interno */
-    border-radius: 5px; /* Cantos arredondados */
+    flex: 1 1 calc(33.33% - 20px);
+    box-sizing: border-box;
+    min-width: 280px;
+}
+
+.container > div {
+    flex: 0 0 auto;
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
 }

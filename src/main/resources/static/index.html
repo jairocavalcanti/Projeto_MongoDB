@@ -12,60 +12,65 @@
 
     <div class="container">
         <div id="listaEventos"></div>
-
         <div id="listaParticipantes"></div>
-
         <div id="eventosComParticipantes"></div>
     </div>
 
-    <h2>Criar Novo Evento</h2>
-    <form id="formEvento">
-        <input type="text" id="eventoNome" placeholder="Nome do evento" required>
-        <input type="text" id="eventoDescricao" placeholder="Descrição do evento" required>
-        <button type="submit">Adicionar Evento</button>
-    </form>
+    <h2>Criar e Gerenciar Eventos e Participantes</h2>
+    <div class="forms-container">
+        <div class="eventos-container">
+            <h3>Criar Novo Evento</h3>
+            <form id="formEvento">
+                <input type="text" id="eventoNome" placeholder="Nome do evento" required>
+                <input type="text" id="eventoDescricao" placeholder="Descrição do evento" required>
+                <button type="submit">Adicionar Evento</button>
+            </form>
 
-    <h2>Editar Evento</h2>
-    <form id="formEditarEvento">
-        <input type="text" id="eventoIdEditar" placeholder="ID do Evento" required>
-        <input type="text" id="eventoNomeEditar" placeholder="Novo nome do evento" required>
-        <input type="text" id="eventoDescricaoEditar" placeholder="Nova descrição do evento" required>
-        <button type="submit">Editar Evento</button>
-    </form>
+            <h3>Editar Evento</h3>
+            <form id="formEditarEvento">
+                <input type="text" id="eventoIdEditar" placeholder="ID do Evento" required>
+                <input type="text" id="eventoNomeEditar" placeholder="Novo nome do evento" required>
+                <input type="text" id="eventoDescricaoEditar" placeholder="Nova descrição do evento" required>
+                <button type="submit">Editar Evento</button>
+            </form>
 
-    <h2>Excluir Evento</h2>
-    <form id="formDeletarEvento">
-        <input type="text" id="eventoIdDeletar" placeholder="ID do Evento para deletar" required>
-        <button type="submit">Excluir Evento</button>
-    </form>
+            <h3>Excluir Evento</h3>
+            <form id="formDeletarEvento">
+                <input type="text" id="eventoIdDeletar" placeholder="ID do Evento para deletar" required>
+                <button type="submit">Excluir Evento</button>
+            </form>
+        </div>
 
-    <h2>Criar Novo Participante</h2>
-    <form id="formParticipante">
-        <input type="text" id="nomeParticipante" placeholder="Nome do participante" required>
-        <input type="email" id="emailParticipante" placeholder="Email do participante" required>
-        <button type="submit">Adicionar Participante</button>
-    </form>
+        <div class="participantes-container">
+            <h3>Criar Novo Participante</h3>
+            <form id="formParticipante">
+                <input type="text" id="nomeParticipante" placeholder="Nome do participante" required>
+                <input type="email" id="emailParticipante" placeholder="Email do participante" required>
+                <button type="submit">Adicionar Participante</button>
+            </form>
 
-    <h2>Editar Participante</h2>
-    <form id="formEditarParticipante">
-        <input type="text" id="participanteIdEditar" placeholder="ID do Participante" required>
-        <input type="text" id="participanteNomeEditar" placeholder="Novo nome do participante" required>
-        <input type="email" id="participanteEmailEditar" placeholder="Novo email do participante" required>
-        <button type="submit">Editar Participante</button>
-    </form>
+            <h3>Editar Participante</h3>
+            <form id="formEditarParticipante">
+                <input type="text" id="participanteIdEditar" placeholder="ID do Participante" required>
+                <input type="text" id="participanteNomeEditar" placeholder="Novo nome do participante" required>
+                <input type="email" id="participanteEmailEditar" placeholder="Novo email do participante" required>
+                <button type="submit">Editar Participante</button>
+            </form>
 
-    <h2>Excluir Participante</h2>
-    <form id="formDeletarParticipante">
-        <input type="text" id="participanteIdDeletar" placeholder="ID do Participante para deletar" required>
-        <button type="submit">Excluir Participante</button>
-    </form>
+            <h3>Excluir Participante</h3>
+            <form id="formDeletarParticipante">
+                <input type="text" id="participanteIdDeletar" placeholder="ID do Participante para deletar" required>
+                <button type="submit">Excluir Participante</button>
+            </form>
 
-    <h2>Associar Participante a Evento</h2>
-    <form id="formAssociarParticipante">
-        <input type="text" id="eventoIdAssociar" placeholder="ID do Evento" required>
-        <input type="text" id="participanteIdAssociar" placeholder="ID do Participante" required>
-        <button type="submit">Associar Participante</button>
-    </form>
+            <h3>Associar Participante a Evento</h3>
+            <form id="formAssociarParticipante">
+                <input type="text" id="eventoIdAssociar" placeholder="ID do Evento" required>
+                <input type="text" id="participanteIdAssociar" placeholder="ID do Participante" required>
+                <button type="submit">Associar Participante</button>
+            </form>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
