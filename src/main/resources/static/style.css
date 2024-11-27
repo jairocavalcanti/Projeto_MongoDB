@@ -59,3 +59,24 @@ button {
 button:hover {
     background-color: #45a049;
 }
+
+.container {
+    display: flex;
+    flex-direction: row; /* Alinha as divs na horizontal */
+    flex-wrap: nowrap; /* Impede que as divs quebrem para novas linhas */
+    overflow-x: auto; /* Adiciona rolagem horizontal, se necessário */
+    gap: 20px; /* Espaço entre as divs */
+    padding: 10px; /* Espaço interno para o container */
+    box-sizing: border-box;
+}
+
+/* Style for each section */
+.container > div {
+    flex: 0 0 auto; /* Garante que cada div mantenha o seu tamanho e não estique */
+    width: 300px; /* Largura fixa para cada seção */
+    background-color: #fff; /* Fundo branco */
+    border: 1px solid #ddd; /* Borda ao redor */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona leve sombra */
+    padding: 10px; /* Espaçamento interno */
+    border-radius: 5px; /* Cantos arredondados */
+}
