@@ -10,7 +10,7 @@ async function listarEventos() {
         `<div class="evento-item">
             <h3>${evento.nome} - ${evento.descricao}</h3>
             <p><strong>ID:</strong> ${evento.id}</p>
-            <p><strong>Participantes IDs:</strong> ${evento.participantesIds.join(', ')}</p>
+           </p>
         </div>`
     ).join('');
 }
@@ -170,17 +170,23 @@ async function listarEventosComParticipantes() {
 
     const eventosComParticipantes = await Promise.all(eventos.map(async (evento) => {
         const participantes = await Promise.all(evento.participantesIds.map(async (id) => {
-            const res = await fetch(`${apiBase}/participantes/${id}`);
-            const participante = await res.json();
-            // Garantir que estamos tratando o ID como string
-            const participanteId = participante.id ? participante.id : 'ID não encontrado';
-            return participante ? `${participante.nome} (${participanteId})` : 'Participante não encontrado';
+            try {
+                const res = await fetch(`${apiBase}/participantes/${id}`);
+                if (!res.ok) throw new Error('Participante não encontrado');
+                const participante = await res.json();
+                return participante ? `${participante.nome} (${participante.id})` : null;
+            } catch {
+                return null; // Retorna null se o participante não for encontrado
+            }
         }));
+
+        // Filtra participantes válidos (remove nulls ou undefined)
+        const participantesFiltrados = participantes.filter(p => p);
 
         return {
             nome: evento.nome,
             descricao: evento.descricao,
-            participantes
+            participantes: participantesFiltrados
         };
     }));
 
@@ -188,10 +194,11 @@ async function listarEventosComParticipantes() {
     listaEventosComParticipantes.innerHTML = eventosComParticipantes.map(ep => 
         `<div class="evento-item">
             <h3>${ep.nome} - ${ep.descricao}</h3>
-            <p><strong>Participantes:</strong> ${ep.participantes.join(', ')}</p>
+            <p><strong>Participantes:</strong> ${ep.participantes.join(', ') || 'Nenhum participante'}</p>
         </div>`
     ).join('');
 }
+
 
 
 // Inicializar o sistema e carregar dados
