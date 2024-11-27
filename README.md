@@ -1,4 +1,4 @@
-Instruções para Configurar e Executar o Projeto no Linux
+##Instruções para Configurar e Executar o Projeto no Linux
 
 Pré-requisitos
 1. Java 17: Certifique-se de que o Java Development Kit (JDK) 17 está instalado:
